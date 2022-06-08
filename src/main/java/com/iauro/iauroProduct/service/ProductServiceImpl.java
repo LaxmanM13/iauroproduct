@@ -3,9 +3,10 @@ package com.iauro.iauroProduct.service;
 import com.iauro.iauroProduct.entities.Product;
 import com.iauro.iauroProduct.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ProductServiceImpl implements ProductService {
 
 
@@ -17,7 +18,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProduct(int id) {
+    public Product getProduct(String id) {
         return productRepository.findById(id).get();
     }
 }

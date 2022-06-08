@@ -1,17 +1,35 @@
 package com.iauro.iauroProduct.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document(collection = "product")
+@EntityScan
+
 public class Product {
 
-    private int id;
-    private String name;
-    private String price;
+    @Id
+     String  _id;
+    String name;
+    String price;
 
-    public int getId() {
-        return id;
+    public Product(String _id, String name, String price) {
+        this._id = _id;
+        this.name = name;
+        this.price = price;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getName() {
