@@ -1,11 +1,12 @@
-package com.iauro.iauroProduct.service;
+package com.iauro.iauroproductassignment.service;
 
-import com.iauro.iauroProduct.entities.Product;
-import com.iauro.iauroProduct.repository.ProductRepository;
+import com.iauro.iauroproductassignment.entities.Product;
+import com.iauro.iauroproductassignment.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -18,8 +19,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProduct(String id) {
-        return productRepository.findById(id).get();
+    public Product getProduct(String name) {
+        return productRepository.findByName(name);
     }
 
 
