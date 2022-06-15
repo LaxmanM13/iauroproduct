@@ -4,9 +4,7 @@ package com.iauro.iauroProduct.Controller;
 import com.iauro.iauroProduct.entities.Product;
 import com.iauro.iauroProduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +25,7 @@ public class ProductController {
     {
         return this.productService.getProduct(id);
     }
+
 
 
 
