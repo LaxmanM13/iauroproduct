@@ -11,8 +11,15 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
 
-   @Autowired
-   private ProductRepository productRepository;
+//   @Autowired
+//   private ProductRepository productRepository;
+
+    private final ProductRepository productRepository;
+
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     @Override
     public List<Product> getAllProduct() {
         return productRepository.findAll();
@@ -22,6 +29,11 @@ public class ProductServiceImpl implements ProductService {
     public Product getProduct(String name) {
         return productRepository.findByName(name);
     }
+
+	@Override
+	public Product save(Product product) {
+		return productRepository.save(product);
+	}
 
 
 }

@@ -10,8 +10,6 @@ public class IauroProductApplication {
 
 		System.out.println("hii laxman mule");
 
-
-
 		SpringApplication.run(IauroProductApplication.class, args);
 	}
 
