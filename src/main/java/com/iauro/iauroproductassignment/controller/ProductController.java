@@ -15,6 +15,8 @@ import java.util.List;
 
 @RestController
 public class ProductController {
+	
+	private final ProductService productService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -22,7 +24,7 @@ public class ProductController {
 
     //    @Autowired
 //    private ProductService productService;
-    private final ProductService productService;
+    
 
 
     @GetMapping("/products")
@@ -37,11 +39,7 @@ public class ProductController {
         return this.productService.getProduct(name);
     }
     
-    @PostMapping("/products")
-    public Product create(@RequestBody Product product)
-    {
-    	return this.productService.save(product);
-    }
+ 
     
 
 

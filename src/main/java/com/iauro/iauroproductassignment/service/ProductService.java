@@ -13,6 +13,6 @@ public interface ProductService {
 
     Product getProduct(String name);
 
-	Product save(Product product);
+
 
 }
